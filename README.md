@@ -1,5 +1,7 @@
 # ChordMate Core
 
+English | [简体中文](./README.zh-CN.md)
+
 ChordMate Core is a pure TypeScript music-theory library for chord parsing, scales, diatonic chords, transposition, piano voicings, voice leading, and MIDI file construction.
 
 ## Status
