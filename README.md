@@ -8,7 +8,7 @@ ChordMate Core is a pure TypeScript music-theory library for chord parsing, scal
 
 - Version: `0.1.5`
 - Package status: `private: true`
-- Repository status: private GitHub release candidate; not public
+- Repository status: public source repository for ChordMate Core `0.1.5`
 - npm publication status: not published
 - Build target: bundler ESM
 - License for Core source code: MPL-2.0
@@ -40,7 +40,7 @@ The checks cover all 9 Core test suites, including 476 absolute chord structures
 
 ## Local use
 
-This package is still private. For local work, install dependencies and build before consuming the generated output:
+The npm package remains unpublished, and `package.json` keeps `private: true`. For local work, install dependencies and build before consuming the generated output:
 
 The reproducible build baseline is Node.js `24.19.0` and pnpm `11.19.0`. The same versions are declared in `package.json`; use a compatible Node 24 release and the declared pnpm version when reproducing a release check.
 
@@ -59,4 +59,4 @@ See [API.md](./API.md) for the 40 explicit public exports. This repository conta
 
 ## Security and licensing status
 
-Core source code is licensed under the Mozilla Public License 2.0; see [LICENSE](./LICENSE). A point-in-time dependency, privacy, credential, packaging, and clean-build review has been completed for this private candidate; this is not a guarantee that the software is free of defects or vulnerabilities. No public GitHub release or npm release has been made. See [SECURITY.md](./SECURITY.md) and [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md).
+Core source code is licensed under the Mozilla Public License 2.0; see [LICENSE](./LICENSE). A point-in-time dependency, privacy, credential, packaging, and clean-build review has been completed for this `0.1.5` candidate; this is not a guarantee that the software is free of defects or vulnerabilities. No GitHub Release or npm release has been made. See [SECURITY.md](./SECURITY.md) and [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md).
