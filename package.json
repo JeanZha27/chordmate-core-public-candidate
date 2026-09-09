@@ -1,0 +1,36 @@
+{
+  "name": "@chordmate/core",
+  "version": "0.1.5",
+  "private": true,
+  "license": "MPL-2.0",
+  "type": "module",
+  "engines": {
+    "node": ">=24.19.0 <25"
+  },
+  "packageManager": "pnpm@11.19.0",
+  "files": [
+    "dist",
+    "API.md",
+    "LICENSE",
+    "README.md",
+    "SECURITY.md",
+    "THIRD_PARTY_NOTICES.md"
+  ],
+  "scripts": {
+    "prepack": "pnpm run build",
+    "test": "node --import tsx scripts/run-tests.mjs",
+    "typecheck": "tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.build.json"
+  },
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "devDependencies": {
+    "tsx": "4.20.6",
+    "typescript": "7.0.2"
+  }
+}

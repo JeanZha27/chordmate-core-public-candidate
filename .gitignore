@@ -1,0 +1,31 @@
+# Dependency and package-manager artifacts
+node_modules/
+
+# Local caches and temporary directories
+.cache/
+.vite/
+.turbo/
+.parcel-cache/
+.pnpm-store/
+tmp/
+.tmp/
+*.local
+
+# Reproducible build output
+dist/
+coverage/
+*.tsbuildinfo
+
+# Packed artifacts and logs
+*.tgz
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# Operating-system files
+.DS_Store
