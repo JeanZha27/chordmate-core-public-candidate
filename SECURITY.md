@@ -8,7 +8,7 @@ No formal security audit has been completed.
 
 ## Scope
 
-The planned review scope includes:
+Security review and maintenance scope includes:
 
 - Core source, tests, configuration, and generated `dist/` output
 - Dependency lockfile and build tooling
