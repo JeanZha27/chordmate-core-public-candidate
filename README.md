@@ -45,11 +45,29 @@ The npm package remains unpublished, and `package.json` keeps `private: true`. F
 The reproducible build baseline is Node.js `24.19.0` and pnpm `11.19.0`. The same versions are declared in `package.json`; use a compatible Node 24 release and the declared pnpm version when reproducing a release check.
 
 ```bash
-pnpm install
+pnpm install --frozen-lockfile
 pnpm build
 ```
 
 `dist/` is intentionally not committed. Consumers working from a clone must run `pnpm build` themselves.
+
+## Minimal API example
+
+The npm package is not published yet. After building this checkout and linking it into an ESM-aware bundler project as `@chordmate/core`, the following code reads a degree progression as deterministic theory data. It does not play audio, download a file, or control a DAW.
+
+```ts
+import { parseChordInput } from '@chordmate/core'
+
+const result = parseChordInput('C major I-vi-IV-V')
+
+console.log(result.chords.map(({ name, notes }) => `${name}: ${notes.join(' · ')}`))
+// [
+//   'C: C · E · G',
+//   'Am: A · C · E',
+//   'F: F · A · C',
+//   'G: G · B · D',
+// ]
+```
 
 ## Module compatibility
 
@@ -58,5 +76,7 @@ The generated output is intended for ESM-aware bundlers. It does not currently p
 See [API.md](./API.md) for the 40 explicit public exports. This repository contains only the reusable, deterministic theory and MIDI-construction library. Browser UI, audio playback, downloads, user accounts, hosted services, analytics, and the private ChordMate Basic application are outside this repository.
 
 ## Security and licensing status
+
+For bug reports and contributions, see [CONTRIBUTING.md](./CONTRIBUTING.md). Security issues must use the private reporting channel described in [SECURITY.md](./SECURITY.md).
 
 Core source code is licensed under the Mozilla Public License 2.0; see [LICENSE](./LICENSE). A point-in-time dependency, privacy, credential, packaging, and clean-build review has been completed for this `0.1.5` candidate; this is not a guarantee that the software is free of defects or vulnerabilities. No GitHub Release or npm release has been made. See [SECURITY.md](./SECURITY.md) and [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md).

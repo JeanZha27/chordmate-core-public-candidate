@@ -117,6 +117,24 @@ pnpm build
 
 `dist/` 目录有意不提交到 Git。直接克隆仓库的使用者需要自行执行 `pnpm build`。
 
+## 最小调用示例
+
+npm 包尚未发布。将本仓库构建完成并以 `@chordmate/core` 的形式链接到支持 ESM 的打包项目后，下面的代码会把级数进行读取为确定性的理论数据。它不会播放音频、下载文件或控制 DAW。
+
+```ts
+import { parseChordInput } from '@chordmate/core'
+
+const result = parseChordInput('C大调 I-vi-IV-V')
+
+console.log(result.chords.map(({ name, notes }) => `${name}: ${notes.join(' · ')}`))
+// [
+//   'C: C · E · G',
+//   'Am: A · C · E',
+//   'F: F · A · C',
+//   'G: G · B · D',
+// ]
+```
+
 ## 模块兼容性
 
 构建输出面向支持 ESM 的打包工具。由于内部相对导入仍保留无扩展名写法，当前版本不承诺可以由原生 Node ESM 直接执行。
@@ -141,6 +159,8 @@ MIDI 构建可以包含音符、速度、时值、轨道标题和由调用者提
 - 未支持的写法通常表示当前产品语法边界，不代表该写法在音乐理论上无效。
 
 ## 隐私、安全与数据边界
+
+Bug 反馈与参与贡献请参阅 [CONTRIBUTING.md](./CONTRIBUTING.md)。安全问题必须使用 [SECURITY.md](./SECURITY.md) 说明的私密报告渠道。
 
 Core 是本地运行的程序库：
 
